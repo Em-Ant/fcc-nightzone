@@ -1,9 +1,11 @@
 var Yelp = require('yelp');
-require('dotenv').load();
-var fs = require('fs');
 
 var Bars = require('../models/bars.js');
 var Users = require('../models/users.js');
+
+if(!process.env.production) {
+  require('dotenv').load();
+}
 
 
 var yelp = new Yelp({
