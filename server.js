@@ -17,7 +17,7 @@ require('./app/config/passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGOLAB_URI);
 
 app.use('/', express.static(process.cwd() + '/client/public'));
 
