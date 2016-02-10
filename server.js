@@ -8,6 +8,8 @@ var session = require('express-session');
 
 var bodyParser = require('body-parser')
 
+var favicon = require('serve-favicon');
+
 var app = express();
 if(!process.env.PRODUCTION) {
   require('dotenv').load();
@@ -19,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 mongoose.connect(process.env.MONGOLAB_URI);
 
+app.use(favicon( process.cwd() + '/client/public/favicon.ico'));
 app.use('/', express.static(process.cwd() + '/client/public'));
 
 app.use(session({
