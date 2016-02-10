@@ -3,7 +3,7 @@ var Yelp = require('yelp');
 var Bars = require('../models/bars.js');
 var Users = require('../models/users.js');
 
-if(!process.env.production) {
+if(!process.env.PRODUCTION) {
   require('dotenv').load();
 }
 
