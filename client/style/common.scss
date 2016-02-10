@@ -1,0 +1,50 @@
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+$purple:  #ff2a7f;
+$cyan: #00ccff;
+$dark-grey: #1c1f24;
+$white: #f6f6f6;
+$yellow: #ffdd55;
+$light-grey: darken($white, 40%);
+$disabled: desaturate(#2574A9, 30%);
+
+.right {
+  float: right;
+}
+
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:focus {
+    outline: none;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    border-color: $yellow;
+  }
+}
+
+.disabled {
+  pointer-events: none !important;
+  color: $disabled !important;
+  border-color: $disabled !important;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

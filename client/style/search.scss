@@ -1,0 +1,46 @@
+
+div.mainsearch {
+  padding: 30px 2% 20px 2%;
+  vertical-align: top;
+  div {
+    vertical-align: middle;
+  }
+  div.w75 {
+    width: 75%;
+  }
+  .col {
+    display: inline-block;
+  }
+
+  .center {
+    text-align: center;
+  }
+  div.w25 {
+    width: 25%;
+  }
+  .inputwrap {
+    border: 1px solid $light-grey;
+  }
+  input {
+    width: 93%;
+    padding-left: 15px;
+    background-color: $dark-grey;
+    border: none;
+    height: 40px;
+    font-size: 1.2em;
+    color: $white;
+    font-family: 'Comfortaa', sans-serif;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  div.btn {
+    height: 30px;
+    padding-top: 12px;
+    border: 1px solid $light-grey;
+    display: block;
+    margin-left: 10px;
+    @extend .clickable;
+  }
+}

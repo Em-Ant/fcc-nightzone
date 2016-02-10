@@ -1,0 +1,41 @@
+
+nav {
+  height: 50px;
+  background-color: darken($dark-grey, 5%);
+  font-size: 1.1em;
+  .container {
+    height: 100%;
+    padding: 0 10px;
+  }
+  .nav {
+    display: inline-block;
+    position: relative;
+    @include vertical-align() ;
+    margin: 0 10px;
+  }
+  .brand {
+    color: $purple;
+    font-size: 1.6em;
+  }
+
+  .btn {
+    @extend .clickable;
+    width: 70px;
+    text-align: center;
+    padding : 5px;
+    border: 1px solid $light-grey;
+    margin-left: 3px;
+    cursor: pointer;
+    img {
+      width: 15px;
+      margin-right: 5px;
+    }
+
+  }
+}
+
+nav a {
+  color: $white;
+  text-decoration: none;
+
+}
