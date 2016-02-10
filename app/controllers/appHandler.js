@@ -40,8 +40,8 @@ function search (req, res, loc) {
       }
     })
     .catch(function(err){
-      console.log('err ',err);
-      res.status(500).end();
+      console.log('searchAuth: ',err);
+      res.json(err);
       return;
     });
 };
@@ -52,8 +52,8 @@ module.exports.search = function(req, res) {
       res.json(data);
      })
     .catch(function(err){
-      console.log('errr ', err);
-      res.status(500).end();
+      console.log('search ', err);
+      res.json(err);
       return;
     })
 };
