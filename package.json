@@ -27,7 +27,6 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "dotenv": "^1.2.0",
     "express": "^4.12.4",
     "express-session": "^1.11.3",
     "mongoose": "^4.1.0",
@@ -38,6 +37,7 @@
     "yelp": "^1.0.1"
   },
   "devDependencies": {
+    "dotenv": "^1.2.0",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.2",
     "babel-preset-react": "^6.3.13",
