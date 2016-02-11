@@ -129,7 +129,7 @@ var App = React.createClass({
               <div className="inputwrap">
                 <input
                   ref="search"
-                  placeholder="find in your city..."
+                  placeholder="find bars in your city..."
                   onKeyDown={this.keyHandle}/>
               </div>
             </div>

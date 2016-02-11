@@ -13,16 +13,26 @@ function AjaxFunctions() {
       document.addEventListener('DOMContentLoaded', fn, false);
    };
 
-   this.ajaxRequest = function (method, url, callback, params) {
+   this.ajaxRequest = function (method, url, success, error, params) {
       var xmlhttp = new XMLHttpRequest();
 
       xmlhttp.onreadystatechange = function () {
-         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            callback(xmlhttp.response);
+         if (xmlhttp.readyState === 4){
+           if(xmlhttp.status === 200) {
+             success(xmlhttp.response);
+           } else {
+             if(error) {
+               error({err: xmlhttp.statusText});
+             } else {
+               console.log(xmlhttp.statusText);
+             }
+           }
          }
       };
 
-      xmlhttp.open(method, url, true);
+      if(url.slice(-1) === '/')
+        url = url.slice(0,url.length-1);
+         
       if (params) {
         var query = [];
         for (var key in params) {
@@ -31,9 +41,24 @@ function AjaxFunctions() {
         }
         query.pop();
         query = query.join('');
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send(query);
+        switch(method.toLowerCase()){
+          case 'get':
+          case 'delete':
+            url += ('?' + query);
+            xmlhttp.open(method, url, true);
+            xmlhttp.send();
+            break;
+          case 'put':
+          case 'post':
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.open(method, url, true);
+            xmlhttp.send(query);
+            break;
+          default:
+            return;
+        }
       } else {
+        xmlhttp.open(method, url, true);
         xmlhttp.send();
       }
 

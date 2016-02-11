@@ -18,13 +18,6 @@ module.exports = function (app, passport) {
     }
   }
 
-
-  app.route('/api/test')
-    .post(function (req, res) {
-      console.log(req.body);
-      res.json(req.body);
-    });
-
   app.route('/api/search')
     .post(isLoggedIn, searchAuth);
 

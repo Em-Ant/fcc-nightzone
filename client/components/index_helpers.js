@@ -33,7 +33,7 @@ module.exports = {
     ajax.ajaxRequest('post', appUrl + '/api/search', function(data){
       var bars = _mapBars(data);
       cb(bars);
-    }, {location: loc || 'last'});
+    }, null, {location: loc || 'last'});
   },
 
  search: function(cb, loc) {
@@ -47,14 +47,14 @@ module.exports = {
     ajax.ajaxRequest('post', appUrl + '/api/addme', function(data){
       data = JSON.parse(data)
       cb(data);
-    }, {barId: id});
+    }, null, {barId: id});
   },
 
   removeMe: function(cb, id) {
     ajax.ajaxRequest('post', appUrl + '/api/removeme', function(data){
       data = JSON.parse(data)
       cb(data);
-    }, {barId: id});
+    }, null, {barId: id});
   },
 
   copy: function(obj) {

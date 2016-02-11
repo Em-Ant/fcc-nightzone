@@ -8,7 +8,7 @@ body {
 li {
   border: 1px solid $light-grey;
   position: relative;
-  margin: 10px 2%;
+  margin: 10px;
 
   a {
     font-size: 1.5em;
@@ -26,7 +26,7 @@ li {
     padding: 4px;
   }
   .main {
-    padding: 10px 20px;
+    padding: 10px 0px;
   }
 }
 
