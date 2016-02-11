@@ -12,3 +12,7 @@ Heroku app: http://nightzone.herokuapp.com
 ###Usage :
 
 Search for bars using the input form. Login with twitter to add yourself to bars.
+
+###Tools:
+* React (no Flux)
+* SCSS, no Bootstrap.
