@@ -32,7 +32,7 @@ function AjaxFunctions() {
 
       if(url.slice(-1) === '/')
         url = url.slice(0,url.length-1);
-         
+
       if (params) {
         var query = [];
         for (var key in params) {
@@ -50,8 +50,8 @@ function AjaxFunctions() {
             break;
           case 'put':
           case 'post':
-            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.open(method, url, true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.send(query);
             break;
           default:
