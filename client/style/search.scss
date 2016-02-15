@@ -18,29 +18,28 @@ div.mainsearch {
   div.w25 {
     width: 25%;
   }
-  .inputwrap {
-    border: 1px solid $light-grey;
-  }
   input {
-    width: 93%;
+    width: 98%;
+    border: 1px solid $light-grey;
+    box-sizing: border-box;
     padding-left: 15px;
     background-color: $dark-grey;
-    border: none;
     height: 40px;
     font-size: 1.2em;
     color: $white;
     font-family: 'Comfortaa', sans-serif;
-    &:focus {
-      outline: none;
-    }
   }
 
-  div.btn {
-    height: 30px;
-    padding-top: 12px;
+  button.btn {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.1em;
+    color: $white;
+    height: 40px;
+    width: 100%;
+    background-color: $dark-grey;
+    box-sizing: border-box;
     border: 1px solid $light-grey;
     display: block;
-    margin-left: 10px;
     @extend .clickable;
   }
 }

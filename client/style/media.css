@@ -11,8 +11,9 @@
     display: block;
   }
 
-  div.w75, div.w25 {
+  div.w75, div.w25, input {
    width: 100% !important;
+   margin: 5px auto;
  }
 
  .mainsearch div.col {

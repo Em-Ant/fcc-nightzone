@@ -13,7 +13,8 @@ var h = require('./index_helpers.js');
 
 var App = React.createClass({
   waitstate: false,
-  search: function() {
+  search: function(e) {
+    e.preventDefault();
     var location = this.refs.search.value;
     if (location && !this.waitstate) {
       this.waitstate = true;
@@ -83,10 +84,6 @@ var App = React.createClass({
       }
     }
   },
-  keyHandle: function(e) {
-    if(e.keyCode === 13)
-      this.search();
-  },
   render: function() {
     var bars;
     if(this.state.bars) {
@@ -125,17 +122,17 @@ var App = React.createClass({
           />
         <div className="container">
           <div className="mainsearch">
-            <div className="col w75">
-              <div className="inputwrap">
+            <form onSubmit={this.search}>
+              <div className="col w75">
                 <input
                   ref="search"
-                  placeholder="find bars in your city..."
-                  onKeyDown={this.keyHandle}/>
+                  placeholder="find bars in your city..."/>
               </div>
-            </div>
-            <div className="col w25 center">
-              <div className={searchClass} onClick={this.search}>{searchText}</div>
-            </div>
+              <div className="col w25 center">
+                <button className={searchClass}>{searchText}</button>
+              </div>
+            </form>
+
           </div>
           <ul>
             {bars}
