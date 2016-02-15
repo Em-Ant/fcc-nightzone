@@ -11,7 +11,7 @@ var bodyParser = require('body-parser')
 var favicon = require('serve-favicon');
 
 var app = express();
-if(!process.env.PRODUCTION) {
+if(!(process.env.NODE_ENV === 'production')) {
   require('dotenv').load();
 }
 
