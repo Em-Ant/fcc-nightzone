@@ -1,0 +1,35 @@
+
+@media (max-width: 500px) {
+  li img {
+    display: none;
+  }
+  nav .user {
+    display: none;
+  }
+  li .main {
+    text-align: center;
+    display: block;
+  }
+
+  div.w75, div.w25 {
+   width: 100% !important;
+ }
+
+ .mainsearch div.col {
+   display: block;
+ }
+
+ .mainsearch div.btn {
+   margin: 10px 0 0 0 !important;
+ }
+}
+
+@media (max-height: 280px) {
+  footer {
+    display: none;
+  }
+
+  ul {
+    padding-bottom: 0px;
+  }
+}

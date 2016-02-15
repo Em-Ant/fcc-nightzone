@@ -1,0 +1,51 @@
+
+body {
+  font-family: 'Comfortaa', sans-serif;
+  background-color: $dark-grey;
+  color: $white;
+}
+
+li {
+  border: 1px solid $light-grey;
+  position: relative;
+  margin: 10px;
+
+  a {
+    font-size: 1.5em;
+    color: $cyan;
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover {
+      color: $yellow;
+      text-decoration: none;
+    }
+  }
+  img, div {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 4px;
+  }
+  .main {
+    padding: 10px 0px;
+  }
+}
+
+
+.gobtn{
+  font-size: 1em;
+  text-align: center;
+  width: 80px;
+  margin: 15px auto 5px auto;
+  border: 1px solid $light-grey;
+  padding: 5px;
+  @extend .clickable;
+}
+
+.active {
+  color: $cyan;
+  border-color: $cyan;
+}
+.imgoing {
+  color: $purple;
+  border-color: $purple;
+}

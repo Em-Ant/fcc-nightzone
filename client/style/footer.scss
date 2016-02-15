@@ -1,0 +1,29 @@
+
+ul {
+  padding-bottom: 95px;
+}
+
+footer {
+  display: block;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-top: 15px;
+  background-color: darken($dark-grey, 5%);
+  p {
+    text-align: center;
+    margin: 10px 0;
+  }
+  a.yelp {
+    color: $purple;
+  }
+  a {
+    text-decoration: none;
+    color: $cyan;
+    transition: color 0.2s;
+    &:hover {
+      color: $yellow
+    }
+  }
+}
