@@ -1,6 +1,6 @@
 'use strict';
 
-var path = process.env.APP_URL;
+var path = process.cwd();
 
 var search = require('../controllers/appHandler.js').search;
 var searchAuth = require('../controllers/appHandler.js').searchUpdateLoc;
