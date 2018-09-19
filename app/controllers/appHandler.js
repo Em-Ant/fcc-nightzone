@@ -1,4 +1,4 @@
-var Yelp = require('yelp');
+var Yelp = require('yelp-fusion');
 
 var Bars = require('../models/bars.js');
 var Users = require('../models/users.js');
@@ -8,12 +8,7 @@ if(!(process.env.NODE_ENV === 'production')) {
 }
 
 
-var yelp = new Yelp({
-  consumer_key: process.env.YELP_CONSUMER_KEY,
-  consumer_secret: process.env.YELP_CONSUMER_SECRET,
-  token: process.env.YELP_TOKEN,
-  token_secret: process.env.YELP_TOKEN_SECRET
-});
+var yelp = Yelp.client(process.env.YELP_API_KEY);
 
 
 function search (req, res, loc) {
@@ -22,7 +17,7 @@ function search (req, res, loc) {
     .then(function(data){
       if (req.user) {
         // Logged in. Add going count and am I going boolean to yelp data
-        var bars = data.businesses;
+        var bars = data.jsonBody.businesses;
         Bars.find({'yelpId': {$in: bars.map(function(b){return b.id})}})
         .exec(function(err, reservedBars){
           bars = bars.map(function(b){
@@ -33,10 +28,10 @@ function search (req, res, loc) {
             }
             return b;
           })
-          res.json(data);
+          res.json(data.jsonBody);
         })
       } else {
-        res.json(data);
+        res.json(data.jsonBody);
       }
     })
     .catch(function(err){
@@ -49,7 +44,7 @@ function search (req, res, loc) {
 module.exports.search = function(req, res) {
   yelp.search({term: 'nightlife', location: req.params.loc})
     .then(function(data){
-      res.json(data);
+      res.json(data.jsonBody);
      })
     .catch(function(err){
       console.log('search ', err);

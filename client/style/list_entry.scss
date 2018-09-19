@@ -20,6 +20,17 @@ li {
       text-decoration: none;
     }
   }
+  .img-container {
+    width: 120px;
+    overflow: hidden;
+    margin-right: 10px;
+    text-align: center;
+  }
+  .img-responsive {
+    box-sizing: border-box;
+    height: 120px;
+    margin: auto;
+  }
   img, div {
     display: inline-block;
     vertical-align: middle;

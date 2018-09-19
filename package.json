@@ -21,7 +21,8 @@
     "webpack"
   ],
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "Emanuele Antonelli",
   "license": "MIT",
@@ -35,7 +36,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "serve-favicon": "^2.3.0",
-    "yelp": "^1.0.1"
+    "yelp-fusion": "^2.2.1"
   },
   "devDependencies": {
     "dotenv": "^1.2.0",

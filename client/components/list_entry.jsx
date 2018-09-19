@@ -35,7 +35,7 @@ module.exports = React.createClass({
 
     return(
       <li>
-        <div >
+        <div className="img-container">
           <img className="img-responsive" src={bar.imageUrl || this.props.appUrl + '/img/bar.png'}></img>
         </div>
         <div className="main">

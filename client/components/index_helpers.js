@@ -10,7 +10,7 @@ function _mapBars(data) {
       out.name = bar.name;
       out.url = bar.url;
       out.barId = bar.id;
-      out.address = bar.location.address.filter(function(el){
+      out.address = bar.location.display_address.filter(function(el){
         if(el !== ', ') return true;
         return false;
       }).join(', ')
