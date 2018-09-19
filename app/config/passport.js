@@ -28,14 +28,24 @@ module.exports = function (passport) {
 				}
 
 				if (user) {
-					return done(null, user);
+					if (user.twitter.username == profile.username &&
+						user.twitter.displayName == profile.displayName) {
+							return done(null, user);
+					} else {
+            user.twitter.username = profile.username;
+            user.twitter.displayName = profile.displayName;
+            user.save(function(err, updatedUser){
+              if (err) throw err;
+              return done(null, updatedUser);
+            })
+          }
+					
 				} else {
 					var newUser = new User();
 
 					newUser.twitter.id = profile.id;
 					newUser.twitter.username = profile.username;
 					newUser.twitter.displayName = profile.displayName;
-					//newUser.nbrClicks.clicks = 0;
 
 					newUser.save(function (err) {
 						if (err) {
