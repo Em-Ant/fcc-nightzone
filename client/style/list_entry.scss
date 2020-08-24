@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Comfortaa', sans-serif;
   background-color: $dark-grey;
@@ -15,37 +14,43 @@ li {
     color: $cyan;
     text-decoration: none;
     transition: color 0.2s;
+
     &:hover {
       color: $yellow;
       text-decoration: none;
     }
   }
+
   .img-container {
     width: 120px;
     overflow: hidden;
     margin-right: 10px;
     text-align: center;
   }
+
   .img-responsive {
     box-sizing: border-box;
     height: 120px;
     margin: auto;
   }
-  img, div {
+
+  img,
+  div {
     display: inline-block;
     vertical-align: middle;
     padding: 4px;
   }
+
   .main {
     padding: 10px 0px;
   }
 }
 
 
-.gobtn{
+.gobtn {
   font-size: 1em;
   text-align: center;
-  width: 80px;
+  min-width: 100px;
   margin: 15px auto 5px auto;
   border: 1px solid $light-grey;
   padding: 5px;
@@ -56,6 +61,7 @@ li {
   color: $cyan;
   border-color: $cyan;
 }
+
 .imgoing {
   color: $purple;
   border-color: $purple;

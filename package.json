@@ -1,14 +1,14 @@
 {
-  "name": "clementinejs_react",
-  "version": "1.0.1",
-  "description": "A full-stack app boilerplate for the freeCodeCamp Course.",
+  "name": "nightzone",
+  "version": "1.0.2",
+  "description": "nightlife example app",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Em-Ant/to-be-added"
+    "url": "git+https://github.com/Em-Ant/fcc-nightzone"
   },
-  "homepage": "http://www.herokuapp-to-be-added.com/",
-  "bugs": "https://github.com/Em-Ant/to-be-added/issues",
+  "homepage": "https://nightzone.herokuapp.com/",
+  "bugs": "https://github.com/Em-Ant/fcc-nightzone/issues",
   "keywords": [
     "MongoDB",
     "Mongoose",
@@ -22,32 +22,38 @@
   ],
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
+    "build": "webpack -p --config ./webpack.config.js --progress",
+    "dev:client": "webpack --config ./webpack.config.js --mode=development --progress --watch"
+  },
+  "engines": {
+    "node": "^12.0.0"
   },
   "author": "Emanuele Antonelli",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.14.2",
-    "express": "^4.12.4",
-    "express-session": "^1.11.3",
-    "mongoose": "^4.1.0",
-    "passport": "^0.3.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.0",
+    "passport": "^0.4.1",
     "passport-twitter": "^1.0.4",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "serve-favicon": "^2.3.0",
-    "yelp-fusion": "^2.2.1"
+    "serve-favicon": "^2.5.0",
+    "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
-    "dotenv": "^1.2.0",
-    "babel-core": "^6.4.5",
-    "babel-loader": "^6.2.2",
-    "babel-preset-react": "^6.3.13",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.8.5",
-    "node-sass": "^3.4.2",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "webpack": "^1.12.12"
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.0.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass-loader": "^10.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
